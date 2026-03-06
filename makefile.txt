@@ -1,0 +1,17 @@
+# cpp files
+MAIN = main.cpp
+
+# hpp files
+MATRIX = Matrix.hpp 
+
+# out files 
+MAT = matrix 
+
+# CXX flags
+STD = -std=c++17
+WARNINGS = -Wpednatic
+SANITIZE = -fsanitize=undefined
+SYMBOLS = -g 
+CC = g++
+CXXFLAGS = $(SYMBOLS) $(WARNINGS) $(STD) $(SANITIZE)
+
