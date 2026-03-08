@@ -10,6 +10,7 @@
 #include <vector>
 #ifndef MATRIX
 #define MATRIX
+
 struct Matrix {
     std::string LatexMatrix;
     size_t row;
@@ -60,6 +61,8 @@ struct Matrix {
     }
 
     void operator*(const double scaler) {
+        if (scaler == 1) return; // avoids unnecessary calculation and conversion to double
+
         for (size_t i = 0; i < row; ++i) {
             for (size_t j = 0; j < column; ++j) {
                 double val;
@@ -128,7 +131,7 @@ struct Matrix {
         }
 
         std::shared_ptr<std::vector<std::vector<std::string> > > _mat =
-            std::make_shared<std::vector<std::vector<std::string> > >();
+            std::make_shared<std::vector<std::vector<std::string> > >(); // thank you C++
 
         size_t index = 0;
         for (size_t i = 0; i < row; ++i) {
